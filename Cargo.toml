@@ -1,0 +1,8 @@
+[package]
+name = "tstd"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5.32", default-features = false, features = ["derive", "help", "suggestions"] }
+time = { version = "0.3.39", default-features = false, features = ["formatting", "parsing"] }
