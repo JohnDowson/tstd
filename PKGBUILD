@@ -10,7 +10,7 @@ makedepends=('cargo')
 depends=()
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/code.tar.gz")
-b2sums=()
+sha512sum=({{SHA512}})
 
 prepare() {
     cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"

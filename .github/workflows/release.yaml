@@ -18,8 +18,9 @@ jobs:
           filename: "code.tar.gz"
           command: "touch code.tar.gz"
           exclusions: "*.git* PKGBUILD code.tar.gz"
+      - run: awk "{gsub(\"{{SHA512}}\", \"\\\"$(sha512sum PKGBUILD | cut -d' ' -f1)\\\"\", \$0); print \$0}" PKGBUILD
       - name: Upload
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "code.tar.gz"
+          artifacts: "code.tar.gz,PKGBUILD"
           omitBody: true
