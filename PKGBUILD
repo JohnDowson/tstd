@@ -4,12 +4,12 @@ pkgname=tstd
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="Command line utility for converting timestamps in various timezones and precisions to human-readable dates"
-url=''
+url='https://github.com/JohnDowson/$pkgname'
 license=('MIT')
 makedepends=('cargo')
 depends=()
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
-source=("$pkgname-$pkgver.tar.gz::https://static.crates.io/crates/$pkgname/$pkgname-$pkgver.crate")
+source=("$pkgname-$pkgver.tar.gz::$url/releases/tag/v$pkgver")
 b2sums=()
 
 prepare() {
@@ -27,6 +27,4 @@ check() {
 
 package() {
     install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
-    # for custom license, e.g. MIT
-    # install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
