@@ -16,7 +16,7 @@ jobs:
         with:
           type: "tar"
           filename: "code.tar,gz"
-          exclusions: "*.git* PKGBUILD"
+          exclusions: "*.git* PKGBUILD code.tar.gz"
       - name: Upload
         uses: ncipollo/release-action@v1
         with:
