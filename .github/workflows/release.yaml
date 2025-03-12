@@ -15,7 +15,8 @@ jobs:
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: "tar"
-          filename: "code.tar,gz"
+          filename: "code.tar.gz"
+          command: "touch code.tar.gz"
           exclusions: "*.git* PKGBUILD code.tar.gz"
       - name: Upload
         uses: ncipollo/release-action@v1
