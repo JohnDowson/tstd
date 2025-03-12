@@ -2,7 +2,23 @@
 name = "tstd"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["Ivan Chinenov <ichinenov@hjvt.dev>"]
+description = "Command line utility for converting timestamps in various timezones and precisions to human-readable dates"
 
 [dependencies]
-clap = { version = "4.5.32", default-features = false, features = ["derive", "help", "suggestions"] }
-time = { version = "0.3.39", default-features = false, features = ["formatting", "parsing"] }
+clap = { version = "4.5.32", default-features = false, features = [
+    "std",
+    "env",
+    "derive",
+    "cargo",
+    "help",
+    "color",
+    "usage",
+    "suggestions",
+] }
+time = { version = "0.3.39", default-features = false, features = [
+    "formatting",
+    "local-offset",
+    "parsing",
+] }
