@@ -9,7 +9,7 @@ license=('MIT')
 makedepends=('cargo')
 depends=()
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
-source=("$pkgname-$pkgver.tar.gz::$url/releases/tag/v$pkgver")
+source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/code.tar.gz")
 b2sums=()
 
 prepare() {
@@ -27,4 +27,6 @@ check() {
 
 package() {
     install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+    # for custom license, e.g. MIT
+    # install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
